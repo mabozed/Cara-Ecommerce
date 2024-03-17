@@ -3,7 +3,7 @@ let noProductsDom = document.querySelector('.noProducts')
 let tableDom = document.querySelector('.p-table')
 
 function drawCartProducts(allProducts) {
-  if (allProducts.length === 0) {
+  if (!allProducts) {
     tableDom.style.display = 'none'
     noProductsDom.innerHTML = `<p>There is no products in cart !!</p>`
     badgeDom.style.display = 'none'
