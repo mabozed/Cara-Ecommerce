@@ -150,4 +150,8 @@ const newArrivals = [
 
 const allProducts = featuredProducts.concat(newArrivals)
 
-localStorage.setItem('products', JSON.stringify(allProducts))
+if (allProducts.length > 0) {
+  localStorage.setItem('products', JSON.stringify(allProducts))
+} else {
+  localStorage.setItem('products', JSON.stringify([]))
+}

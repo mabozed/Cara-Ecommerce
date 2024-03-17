@@ -39,6 +39,7 @@ function DrawUI(arr, classDom) {
     .join(' ')
 
   classDom.innerHTML = productUI
+  changeBadge()
 }
 
 function getItem(id) {
@@ -46,8 +47,8 @@ function getItem(id) {
   window.location.href = 'sproduct.html'
 }
 
-if (JSON.parse(localStorage.getItem('productsInCart')).length === 0) {
-  badgeDom.style.display = 'none'
-} else {
+if (JSON.parse(localStorage.getItem('productsInCart')).length >= 1) {
   badgeDom.style.display = 'inline'
+} else {
+  badgeDom.style.display = 'none'
 }

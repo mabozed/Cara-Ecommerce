@@ -3,7 +3,7 @@ let noProductsDom = document.querySelector('.noProducts')
 let tableDom = document.querySelector('.p-table')
 
 function drawCartProducts(allProducts) {
-  if (!allProducts) {
+  if (allProducts.length === 0) {
     tableDom.style.display = 'none'
     noProductsDom.innerHTML = `<p>There is no products in cart !!</p>`
     badgeDom.style.display = 'none'
@@ -44,6 +44,7 @@ function addquantity(id) {
   }
   localStorage.setItem('productsInCart', JSON.stringify(allElements))
   drawCartProducts(allElements)
+  changeBadge()
 }
 function losequantity(id) {
   let allElements = JSON.parse(localStorage.getItem('productsInCart'))
@@ -54,6 +55,7 @@ function losequantity(id) {
   }
   localStorage.setItem('productsInCart', JSON.stringify(allElements))
   drawCartProducts(allElements)
+  changeBadge()
 }
 
 function removeItemFromCart(id) {
