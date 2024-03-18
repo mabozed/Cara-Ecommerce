@@ -1,27 +1,30 @@
 let productsDom = document.querySelector('.products')
 let noProductsDom = document.querySelector('.noProducts')
 let tableDom = document.querySelector('.p-table')
+let cBtn = document.querySelector('.c-btn')
 
 function drawCartProducts(allProducts) {
   if (allProducts.length === 0) {
     tableDom.style.display = 'none'
     noProductsDom.innerHTML = `<p>There is no products in cart !!</p>`
     badgeDom.style.display = 'none'
+    cBtn.style.display = 'none'
   }
   if (allProducts.length != 0) {
+    cBtn.style.display = 'inline'
     let productUI = allProducts
       .map((item) => {
         return `<tr>
                     
                     <td><a onclick="removeItemFromCart(${
                       item.id
-                    })" ><i class="fas fa-trash-alt"></i></a>
+                    })" style="cursor: pointer;"><i class="fas fa-trash-alt"></i></a>
                         <a onclick="addquantity(${
                           item.id
-                        })" ><i class="fa fa-arrow-circle-up"></i></a>
+                        })" style="cursor: pointer;"><i class="fa fa-arrow-circle-up"></i></a>
                         <a onclick="losequantity(${
                           item.id
-                        })" ><i class="fa fa-arrow-circle-down"></i></a></td>
+                        })" style="cursor: pointer;"><i class="fa fa-arrow-circle-down"></i></a></td>
                     <td><img src=${item.image} alt=""></td>
                     <td><h5>${item.desc}</h5></td>
                     <td>${item.price}</td>
@@ -44,7 +47,6 @@ function addquantity(id) {
   }
   localStorage.setItem('productsInCart', JSON.stringify(allElements))
   drawCartProducts(allElements)
-  changeBadge()
 }
 function losequantity(id) {
   let allElements = JSON.parse(localStorage.getItem('productsInCart'))
@@ -55,12 +57,12 @@ function losequantity(id) {
   }
   localStorage.setItem('productsInCart', JSON.stringify(allElements))
   drawCartProducts(allElements)
-  changeBadge()
 }
 
 function removeItemFromCart(id) {
   let allElements = JSON.parse(localStorage.getItem('productsInCart'))
   let updatedArr = allElements.filter((item) => item.id !== id)
   localStorage.setItem('productsInCart', JSON.stringify(updatedArr))
+
   drawCartProducts(updatedArr)
 }

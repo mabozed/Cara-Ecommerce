@@ -14,6 +14,13 @@ if (close) {
   })
 }
 
+if (JSON.parse(localStorage.getItem('productsInCart')).length >= 1) {
+  badgeDom.style.display = 'inline'
+  cBtn.style.display = 'inline'
+} else {
+  badgeDom.style.display = 'none'
+  cBtn.style.display = 'none'
+}
 function DrawUI(arr, classDom) {
   let productUI = arr
     .map((item) => {
@@ -44,10 +51,4 @@ function DrawUI(arr, classDom) {
 function getItem(id) {
   localStorage.setItem('productId', id)
   window.location.href = 'sproduct.html'
-}
-
-if (JSON.parse(localStorage.getItem('productsInCart')).length >= 1) {
-  badgeDom.style.display = 'inline'
-} else {
-  badgeDom.style.display = 'none'
 }

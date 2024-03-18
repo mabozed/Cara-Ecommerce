@@ -258,6 +258,10 @@ nav {
   bottom: 20px;
   right: 10px;
 }
+#products .pro-item .cart:hover {
+  background-color: #088178;
+  color: #e8f6ea;
+}
 
 #banner {
   width: 100%;
@@ -311,7 +315,7 @@ nav {
   font-weight: 500;
   padding-bottom: 15px;
 }
-#sm-banner .banner-box:hover button {
+#sm-banner .banner-box button:hover {
   background: #088178;
   border: 1px solid #088178;
 }
@@ -450,15 +454,19 @@ footer .copyright {
 #pagination {
   text-align: center;
 }
-#pagination a {
+#pagination button {
   text-decoration: none;
   background-color: #088178;
   padding: 15px 20px;
   border-radius: 4px;
   color: #fff;
   font-weight: 699;
+  border: none;
 }
-#pagination a i {
+#pagination button:disabled {
+  background-color: #606063;
+}
+#pagination button i {
   font-size: 16px;
   font-weight: 600;
 }
@@ -516,187 +524,11 @@ footer .copyright {
 #page-header.blog-header {
   background-image: url('./img/banner/b19.jpg');
 }
-#blog {
-  padding: 150px 150px 0 150px;
-}
-#blog .blog-box {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  position: relative;
-  padding-bottom: 90px;
-}
-#blog .blog-img {
-  width: 50%;
-  margin-right: 40px;
-}
-#blog img {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-}
-#blog .blog-content {
-  width: 50%;
-}
-#blog .blog-content a {
-  text-decoration: none;
-  font-size: 11px;
-  font-weight: 700;
-  color: #000;
-  position: relative;
-  transition: 0.3s;
-}
-#blog .blog-content a::after {
-  content: '';
-  width: 50px;
-  height: 1px;
-  background-color: #000;
-  position: absolute;
-  top: 4px;
-  right: -60px;
-}
-#blog .blog-content a:hover {
-  color: #088178;
-}
-#blog .blog-content a:hover::after {
-  background-color: #088178;
-}
-#blog .blog-box h1 {
-  position: absolute;
-  top: -40px;
-  left: 0;
-  font-size: 70px;
-  font-weight: 700;
-  color: #c9cbce;
-  z-index: -9;
-}
 
 /* about page */
 
 #page-header.about-header {
   background-image: url('../img/about/banner.png');
-}
-#about-head {
-  display: flex;
-  align-items: center;
-}
-#about-head img {
-  width: 50%;
-  height: auto;
-}
-#about-head div {
-  padding-left: 40px;
-}
-#about-app {
-  text-align: center;
-}
-#about-app .video {
-  width: 70%;
-  height: 100%;
-  margin: 30px auto 0;
-}
-#about-app .video video {
-  width: 100%;
-  height: 100%;
-  border-radius: 20px;
-}
-
-/* contact page */
-
-#contact-details {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-#contact-details .details {
-  width: 40%;
-}
-#contact-details .details span,
-#form-details form span {
-  font-size: 12px;
-}
-#contact-details .details h2,
-#form-details form h2 {
-  font-size: 26px;
-  font-weight: 700;
-  line-height: 35px;
-  padding: 20px 0;
-}
-#contact-details .details h3 {
-  font-size: 20px;
-  padding-bottom: 15px;
-}
-#contact-details .contact-info li {
-  list-style: none;
-  display: flex;
-  padding: 10px 0;
-}
-#contact-details .contact-info li i {
-  font-size: 14px;
-  padding-right: 22px;
-}
-#contact-details .contact-info li p {
-  font-size: 14px;
-  margin: 0;
-}
-#contact-details .map {
-  width: 55%;
-  height: 400px;
-}
-#contact-details .map iframe {
-  width: 100%;
-  height: 100%;
-}
-
-#form-details {
-  display: flex;
-  justify-content: space-between;
-  margin: 30px;
-  padding: 80px;
-  border: 2px solid #e1e1e1;
-}
-
-#form-details form {
-  width: 65%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-#form-details form input,
-#form-details form textarea {
-  width: 100%;
-  padding: 12px 15px;
-  outline: none;
-  margin-bottom: 20px;
-  border: 1px solid #e1e1e1;
-}
-#form-details form button {
-  background-color: #088178;
-  color: white;
-}
-#form-details .people div {
-  padding-bottom: 25px;
-  display: flex;
-  align-items: flex-start;
-}
-#form-details .people div img {
-  width: 65px;
-  height: 65px;
-  object-fit: cover;
-  margin-right: 15px;
-}
-
-#form-details .people div p {
-  margin: 0;
-  font-size: 13px;
-  line-height: 25px;
-}
-
-#form-details .people div p span {
-  display: block;
-  font-size: 16px;
-  font-weight: 600;
-  color: #000;
 }
 
 /* cart page  */
@@ -757,6 +589,7 @@ footer .copyright {
   flex-wrap: wrap;
   justify-content: space-between;
 }
+
 #coupon {
   width: 50%;
   margin-bottom: 30px;
