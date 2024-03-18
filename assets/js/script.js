@@ -39,7 +39,6 @@ function DrawUI(arr, classDom) {
     .join(' ')
 
   classDom.innerHTML = productUI
-  changeBadge()
 }
 
 function getItem(id) {
