@@ -36,6 +36,7 @@ function addToCart(id) {
   console.log(uniqProducts)
   localStorage.setItem('productsInCart', JSON.stringify(uniqProducts))
   badgeDom.style.display = 'inline'
+  badgeSmDom.style.display = 'inline'
 }
 
 function uniqArr(arr, filterType) {

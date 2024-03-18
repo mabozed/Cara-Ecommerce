@@ -1,6 +1,7 @@
 let productsDom = document.querySelector('.products')
 let noProductsDom = document.querySelector('.noProducts')
 let tableDom = document.querySelector('.p-table')
+
 let cBtn = document.querySelector('.c-btn')
 
 function drawCartProducts(allProducts) {
@@ -8,6 +9,7 @@ function drawCartProducts(allProducts) {
     tableDom.style.display = 'none'
     noProductsDom.innerHTML = `<p>There is no products in cart !!</p>`
     badgeDom.style.display = 'none'
+    badgeSmDom.style.display = 'none'
     cBtn.style.display = 'none'
   }
   if (allProducts.length != 0) {
@@ -48,6 +50,7 @@ function addquantity(id) {
   localStorage.setItem('productsInCart', JSON.stringify(allElements))
   drawCartProducts(allElements)
 }
+
 function losequantity(id) {
   let allElements = JSON.parse(localStorage.getItem('productsInCart'))
   for (let i = 0; i < allElements.length; i++) {

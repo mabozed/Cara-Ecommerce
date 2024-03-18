@@ -2,6 +2,7 @@ const bar = document.getElementById('bar')
 const nav = document.getElementById('navbar')
 const close = document.getElementById('close')
 const badgeDom = document.querySelector('.shop-badge')
+const badgeSmDom = document.querySelector('.shop-sm-badge')
 
 if (bar) {
   bar.addEventListener('click', () => {
@@ -16,11 +17,19 @@ if (close) {
 
 if (JSON.parse(localStorage.getItem('productsInCart')).length >= 1) {
   badgeDom.style.display = 'inline'
+  badgeSmDom.style.display = 'inline'
   cBtn.style.display = 'inline'
 } else {
   badgeDom.style.display = 'none'
+  badgeSmDom.style.display = 'none'
   cBtn.style.display = 'none'
 }
+
+function getItem(id) {
+  localStorage.setItem('productId', id)
+  window.location.href = 'sproduct.html'
+}
+
 function DrawUI(arr, classDom) {
   let productUI = arr
     .map((item) => {
@@ -46,9 +55,4 @@ function DrawUI(arr, classDom) {
     .join(' ')
 
   classDom.innerHTML = productUI
-}
-
-function getItem(id) {
-  localStorage.setItem('productId', id)
-  window.location.href = 'sproduct.html'
 }

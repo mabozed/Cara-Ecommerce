@@ -86,17 +86,19 @@ nav {
 #close {
   display: none;
 }
-#lg-bag {
+#lg-bag,
+#sm-bag {
   position: relative;
 }
-.shop-badge {
+.shop-badge,
+.shop-sm-badge {
   width: 10px;
   height: 10px;
   border-radius: 50%;
   background-color: #088178;
   position: absolute;
-  top: 0;
-  left: 75%;
+  top: -5px;
+  right: -10px;
 }
 
 /* Home Page */
@@ -426,7 +428,7 @@ footer .follow i {
   cursor: pointer;
 }
 footer .follow i:hover,
-footer .col a:hover {
+footer .f-col a:hover {
   color: #088178;
 }
 footer .copyright {
@@ -705,6 +707,7 @@ footer .copyright {
     position: fixed;
     top: 0;
     right: -300px;
+    z-index: 9;
     height: 100vh;
     width: 300px;
     background-color: #e3e6f3;
@@ -776,18 +779,9 @@ footer .copyright {
   #newsletter .form {
     width: 70%;
   }
-
-  /* contact page */
-  #form-details {
-    padding: 40px;
-  }
-
-  #form-details form {
-    width: 50%;
-  }
 }
 
-@media (max-width: 477px) {
+@media (max-width: 576px) {
   .section-p1 {
     padding: 20px 0;
   }
@@ -811,8 +805,11 @@ footer .copyright {
     width: 155px;
     margin: 0 0 15px 0;
   }
+  #feature > div {
+    justify-content: space-around !important;
+  }
   #products .pro-item {
-    width: 100%;
+    width: 85%;
   }
   #banner h2 {
     font-size: 24px;
@@ -835,73 +832,31 @@ footer .copyright {
   #prodetails {
     display: flex;
     flex-direction: column;
+    align-items: center;
   }
   #prodetails .single-pro-img {
-    width: 100%;
+    width: 85%;
     margin-right: 0px;
   }
   #prodetails .single-pro-details {
     width: 100%;
-  }
-
-  /* blog page */
-  #blog {
-    padding: 100px 20px 0 20px;
-  }
-  #blog .blog-box {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  #blog .blog-img {
-    width: 100%;
-    margin-right: 0px;
-    padding-bottom: 10px;
-  }
-  #blog .blog-content {
-    width: 100%;
-  }
-
-  /* about page */
-  #about-head {
-    flex-direction: column;
-  }
-  #about-head img {
-    width: 100%;
-    margin-bottom: 20px;
-  }
-  #about-head div {
-    padding-left: 0px;
-  }
-  #about-head div h2 {
     text-align: center;
-  }
-
-  /* contact page */
-  #contact-details {
-    flex-direction: column;
-  }
-  #contact-details .details {
-    width: 100%;
-    margin-bottom: 30px;
-  }
-  #contact-details .map {
-    width: 100%;
-  }
-  #form-details {
-    margin: 10px;
-    padding: 30px 10px;
-    flex-wrap: wrap;
-  }
-
-  #form-details form {
-    width: 100%;
-    margin-bottom: 30px;
+    margin-bottom: 80px;
   }
 
   /* cart page */
   #cart-add {
     flex-direction: column;
+  }
+  #cart-container table tbody img {
+    width: 60px;
+    height: 50px;
+  }
+  #cart-container table h5 {
+    font-size: 14px;
+  }
+  .c-btn-container {
+    text-align: center;
   }
   #coupon {
     width: 100%;
