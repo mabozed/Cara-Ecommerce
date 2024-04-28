@@ -287,7 +287,20 @@ nav {
 #banner h2 span {
   color: #ef3636;
 }
-#banner button:hover {
+#banner .more {
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 15px 30px;
+  color: #000;
+  background-color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: 0.2s;
+}
+#banner .more:hover {
   background-color: #088178;
   color: #fff;
 }
@@ -495,29 +508,19 @@ footer .copyright {
   padding-top: 30px;
 }
 #prodetails .single-pro-details h4 {
-  padding: 40px 0 20px 0;
+  padding: 20px 0 20px 0;
+  color: #088178;
+  font-weight: bold;
 }
 #prodetails .single-pro-details h2 {
   font-size: 26px;
+  padding-bottom: 20px;
 }
-#prodetails .single-pro-details select {
-  display: block;
-  padding: 5px 10px;
-  margin-bottom: 15px;
-}
-#prodetails .single-pro-details input {
-  width: 50px;
-  height: 47px;
-  padding-left: 10px;
-  font-size: 16px;
-  margin-right: 10px;
-}
-#prodetails .single-pro-details input:focus {
-  outline: none;
-}
+
 #prodetails .single-pro-details button {
   background-color: #088178;
   color: #fff;
+  margin-top: 10px;
 }
 .single-pro-details span {
   line-height: 25px;
@@ -650,16 +653,16 @@ footer .copyright {
   text-align: center;
 }
 #cart-container table td:nth-child(1) {
-  width: 15%;
+  width: 18%;
 }
 #cart-container table td:nth-child(2),
 #cart-container table td:nth-child(3) {
-  width: 20%;
+  width: 23%;
 }
 #cart-container table td:nth-child(4),
 #cart-container table td:nth-child(5),
 #cart-container table td:nth-child(6) {
-  width: 15%;
+  width: 12%;
 }
 #cart-container table td:nth-child(5) input {
   display: block;
@@ -682,6 +685,8 @@ footer .copyright {
 }
 
 .c-btn {
+  display: block;
+  width: 100%;
   font-size: 1.8rem;
   font-weight: 700;
   outline: none;
@@ -689,13 +694,15 @@ footer .copyright {
   background-color: #088178;
   color: aliceblue;
   padding: 12px 30px;
-  cursor: pointer;
   text-transform: uppercase;
   text-decoration: none;
 }
 .c-btn:hover {
   color: aliceblue;
   background-color: #3a3a3a;
+}
+.c-btn:disabled {
+  background-color: #8d8c89;
 }
 /* Start Responsive "Media Query" */
 
@@ -853,7 +860,8 @@ footer .copyright {
     height: 50px;
   }
   #cart-container table h5 {
-    font-size: 14px;
+    font-size: 10px;
+    font-weight: bold;
   }
   .c-btn-container {
     text-align: center;

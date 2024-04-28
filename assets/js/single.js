@@ -16,11 +16,10 @@ singleDom.innerHTML = `
       <div class="single-pro-details">
         <h4>${productDetails.desc}</h4>
         <h2>$${productDetails.price}</h2>
+        <h5>${productDetails.brand}</h5>
         <h4>Product Details</h4>
         <p
-          >Relaxed fit shirt in a patterned viscose weave. Features a resort
-          collar, a French front and short sleeves. Straight cut them.Relaxed
-          fit shirt in a patterned viscose weave.</p>
+          >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quod cum officia rem. Explicabo, veritatis? Unde?</p>
         <button class="normal" onclick="addToCart(${productDetails.id})">Add To Cart</button>
       </div>`
 
