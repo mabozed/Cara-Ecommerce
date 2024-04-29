@@ -3,6 +3,7 @@ const nav = document.getElementById('navbar')
 const close = document.getElementById('close')
 const badgeDom = document.querySelector('.shop-badge')
 const badgeSmDom = document.querySelector('.shop-sm-badge')
+let cBtn = document.querySelector('.c-btn')
 
 if (bar) {
   bar.addEventListener('click', () => {

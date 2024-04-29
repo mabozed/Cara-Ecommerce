@@ -2,8 +2,6 @@ let productsDom = document.querySelector('.products')
 let noProductsDom = document.querySelector('.noProducts')
 let tableDom = document.querySelector('.p-table')
 
-let cBtn = document.querySelector('.c-btn')
-
 function drawCartProducts(allProducts) {
   if (allProducts.length === 0) {
     tableDom.style.display = 'none'
